@@ -14,7 +14,7 @@ public class BBDD {
         
         
         Alumno[] alumnos = new Alumno[10];     
-        int contador = 0,opc;
+        int contador = 0,opc=0;
         
         System.out.println("Bienvenido\n");
         do{
@@ -41,8 +41,10 @@ public class BBDD {
                             System.out.println("1.- Nombre\n2.- aPaterno\n3._ aMaterno\n4.- FN\n5.- Matricula\n6.- Carrera\n7.- Grupo");
                             atributo = entrada.nextInt();
                              Alumno.consulta(atributo);
-                             for (Alumno a: alumnos){
-                                 a.busqueda();
+                             System.out.print("Nombre\t\t aPaterno\t\t aMaterno\t\t FN\t\t Matricula\t\t Carrera\t\t Grupo\n");
+                             for (int i = 0; i<contador;i++){
+                                 alumnos[i].busqueda(atributo);
+                                 System.out.println("");
                              }
    
                         }while(atributo<1 || atributo>7);
